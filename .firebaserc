@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "iartiste": {
+      "hosting": {
+        "iartistre": [
+          "iartiste"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "iartiste"
+  }
+}

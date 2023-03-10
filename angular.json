@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "iartistre:build:production",
+            "firebaseProject": "iartiste",
+            "firebaseHostingSite": "iartiste"
+          }
         }
       }
     }
