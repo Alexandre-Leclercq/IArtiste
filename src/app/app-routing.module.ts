@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   // {path: 'login', component: },
   {path: 'register', component: RegisterComponent},
-  // {path: 'forogt-password', component:},
+  // {path: 'forgot-password', component:},
   // {path: 'verify-email-adress', component:},
 ];
 
