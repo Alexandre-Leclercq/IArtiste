@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 const routes: Routes = [
- {path: 'login', component: LoginComponent},
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'generate-image', component: RegisterComponent},
-  // {path: 'forgot-password', component:},
-  // {path: 'verify-email-adress', component:},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
+  {path: 'verify-email-adress', component: VerifyEmailComponent },
 ];
 
 @NgModule({

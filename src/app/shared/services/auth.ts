@@ -75,7 +75,7 @@ export class AuthService {
     return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+        window.alert('Mot de passe réinitialisé, un email vous a été envoyé, verifier votre boite mail.');
       })
       .catch((error) => {
         window.alert(error);
@@ -89,7 +89,7 @@ export class AuthService {
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['generate-image']);
     });
   }
   // Auth logic to run auth providers
@@ -97,7 +97,7 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['generate-image']);
         this.SetUserData(result.user);
       })
       .catch((error) => {
@@ -114,8 +114,6 @@ export class AuthService {
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
       emailVerified: user.emailVerified,
     };
     return userRef.set(userData, {
@@ -126,7 +124,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['login']);
     });
   }
 }
