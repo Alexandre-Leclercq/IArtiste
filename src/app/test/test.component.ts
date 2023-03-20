@@ -19,8 +19,4 @@ export class TestComponent {
       console.log(a);
     })
   }
-
-  signOut(): void {
-    this.authService.SignOut()
-  }
 }

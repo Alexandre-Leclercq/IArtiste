@@ -15,8 +15,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryclicComponent } from './galleryclic/galleryclic.component'; 
-import { HomeComponent } from './home/home.component';
-import { TestComponent } from './test/test.component'; 
+import { TestComponent } from './test/test.component';
+import { GenerateImageComponent } from './generate-image/generate-image.component'; 
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TestComponent } from './test/test.component';
     VerifyEmailComponent,
     GalleryComponent,
     GalleryclicComponent,
-    HomeComponent
+    GenerateImageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
