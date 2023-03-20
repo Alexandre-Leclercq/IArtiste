@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryclicComponent } from './galleryclic/galleryclic.component';
 import { HomeComponent } from './home/home.component';
-
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'gallery', component: GalleryComponent},
   {path: 'galleryclic', component: GalleryclicComponent},
-  {path: 'generate-image', component: RegisterComponent, canActivate: [AuthGuard]},
+  {path: 'generate-image', component: TestComponent, canActivate: [AuthGuard]},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'verify-email-adress', component: VerifyEmailComponent },
   {path: 'navbar', component: NavbarComponent },

@@ -8,7 +8,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import { AuthService } from './shared/services/auth';
+import { AuthService } from './shared/services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -16,6 +16,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryclicComponent } from './galleryclic/galleryclic.component'; 
 import { HomeComponent } from './home/home.component';
+import { TestComponent } from './test/test.component'; 
+
 
 @NgModule({
   declarations: [
