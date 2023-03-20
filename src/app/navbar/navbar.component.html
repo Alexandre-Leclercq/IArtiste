@@ -20,8 +20,8 @@
         <!-- Navbar brand -->
         <a class="navbar-brand mt-2 mt-lg-0" href="#">
           <img
-            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-            height="15"
+            src="../../assets/img/logo.png"
+            height="45"
             alt="MDB Logo"
             loading="lazy"
           />
@@ -29,13 +29,17 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/generate-image">Générer</a>
+            <a class="nav-link" routerLink="/register">Générer</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/private-gallery">Galerie personnelle</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/public-gallery">Galerie publique</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Galerie
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Personnelle</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Publique</a></li>
+            </ul>
           </li>
         </ul>
         <!-- Left links -->
@@ -46,11 +50,39 @@
       <div class="d-flex align-items-center">
         <!-- Avatar -->
         <p class="text-light bg-dark mb-0 px-2">Username</p>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/disconnect">Déconnexion</a>
-            </li>
-          </ul>
+        <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+            <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt=""
+            loading="lazy"
+            />
+            
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuAvatar"
+            >
+              <li>
+                <a class="dropdown-item" href="#">Mon profil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Paramètres</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Se déconnecter</a>
+              </li>
+            </ul>
+          </div>
       </div>
       <!-- Right elements -->
     </div>
