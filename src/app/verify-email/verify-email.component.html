@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Merci de votre inscription</h5>
+            <div class="formGroup" *ngIf="authService.userData as user">
+                <p class="text-center">Nous vous avons envoyer un email de confirmation à l'adresse <strong>{{user.email}}</strong>.</p>
+                <p class="text-center">Consulter vos emails et cliquer sur le liens pour vérifier votre adresse email.</p>
+            </div>
+            <div class="formGroup">
+                <button type="button" class="btn btn-primary" (click)="sendVerificationMail()">Renvoyer l'email de vérification</button>
+            </div>
+            <span>Retourner à la page de  <span routerLink="/sign-in">connexion</span> ?</span>
+        </div>
+    </div>
+</div>

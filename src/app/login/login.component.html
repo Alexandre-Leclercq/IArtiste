@@ -1,17 +1,7 @@
 <div class="container">
     <div class="card shadow-sm">
         <div class="card-body">
-            <h5 class="card-title">Inscription</h5>
-            <!-- <div class="row">
-                <div class="col-6">
-                    <label for="firstName" class="form-label">Prénom</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="John" #userFirstName required>
-                </div>
-                <div class="col-6">
-                    <label for="lastName" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Doe" #userLastName required>
-                </div>
-            </div> -->
+            <h5 class="card-title">Connexion</h5>
             <div class="row mb-3">
                 <div class="col">
                     <label for="email" class="form-label">Email</label>
@@ -26,7 +16,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col-4">
-                    <button type="button" (click)="sign_up(userEmail.value, userPassword.value)" class="btn btn-primary">S'inscrire</button>
+                    <button type="button" (click)="sign_in(userEmail.value, userPassword.value)" class="btn btn-primary">S'inscrire</button>
                 </div>
             </div>
         </div>
