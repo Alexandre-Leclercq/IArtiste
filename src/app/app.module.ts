@@ -9,7 +9,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import { AuthService } from './shared/services/auth';
+import { AuthService } from './shared/services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
