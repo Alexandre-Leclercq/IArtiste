@@ -15,6 +15,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryclicComponent } from './galleryclic/galleryclic.component'; 
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GalleryclicComponent } from './galleryclic/galleryclic.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     GalleryComponent,
-    GalleryclicComponent
+    GalleryclicComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
