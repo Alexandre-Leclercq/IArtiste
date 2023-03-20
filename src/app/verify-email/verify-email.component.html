@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card shadow-sm">
+    <div class="card shadow-sm text-center">
         <div class="card-body">
             <h5 class="card-title">Merci de votre inscription</h5>
             <div class="formGroup" *ngIf="authService.userData as user">
@@ -9,7 +9,7 @@
             <div class="formGroup">
                 <button type="button" class="btn btn-primary" (click)="sendVerificationMail()">Renvoyer l'email de vérification</button>
             </div>
-            <span>Retourner à la page de  <span routerLink="/sign-in">connexion</span> ?</span>
+            <span>Retourner à la page de  <a routerLink="/sign-in">connexion</a> ?</span>
         </div>
     </div>
 </div>

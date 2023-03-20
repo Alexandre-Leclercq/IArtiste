@@ -15,7 +15,9 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { GalleryclicComponent } from './galleryclic/galleryclic.component'; 
+import { GalleryclicComponent } from './galleryclic/galleryclic.component';
+import { TestComponent } from './test/test.component'; 
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { GalleryclicComponent } from './galleryclic/galleryclic.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     GalleryComponent,
-    GalleryclicComponent
+    GalleryclicComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
