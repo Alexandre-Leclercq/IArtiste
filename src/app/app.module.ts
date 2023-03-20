@@ -7,16 +7,16 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './view/register/register.component';
 import { AuthService } from './shared/services/auth.service';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './view/login/login.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { GalleryclicComponent } from './galleryclic/galleryclic.component'; 
+import { ForgotPasswordComponent } from './view/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './view/verify-email/verify-email.component';
+import { GalleryComponent } from './view/gallery/gallery.component';
+import { GalleryclicComponent } from './view/galleryclic/galleryclic.component'; 
 import { TestComponent } from './test/test.component';
-import { GenerateImageComponent } from './generate-image/generate-image.component'; 
+import { GenerateImageComponent } from './view/generate-image/generate-image.component'; 
 import { NavbarComponent } from './navbar/navbar.component';
 
 

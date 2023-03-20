@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { RegisterComponent } from './view/register/register.component';
+import { LoginComponent } from './view/login/login.component';
+import { ForgotPasswordComponent } from './view/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './view/verify-email/verify-email.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { NavbarComponent } from './navbar/navbar.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { GalleryclicComponent } from './galleryclic/galleryclic.component';
+import { GalleryComponent } from './view/gallery/gallery.component';
+import { GalleryclicComponent } from './view/galleryclic/galleryclic.component';
 import { TestComponent } from './test/test.component';
-import { GenerateImageComponent } from './generate-image/generate-image.component';
+import { GenerateImageComponent } from './view/generate-image/generate-image.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
