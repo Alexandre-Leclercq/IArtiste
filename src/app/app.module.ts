@@ -18,6 +18,8 @@ import { GalleryclicComponent } from './view/galleryclic/galleryclic.component';
 import { TestComponent } from './test/test.component';
 import { GenerateImageComponent } from './view/generate-image/generate-image.component'; 
 import { NavbarComponent } from './navbar/navbar.component';
+import { ApiService } from './shared/services/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     GalleryComponent,
     GalleryclicComponent,
     GenerateImageComponent,
-    NavbarComponent
+    NavbarComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -38,11 +41,13 @@ import { NavbarComponent } from './navbar/navbar.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
-    AuthService
+    AuthService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

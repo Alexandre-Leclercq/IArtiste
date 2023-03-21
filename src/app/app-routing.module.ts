@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'generate-image', component: GenerateImageComponent, canActivate: [AuthGuard]},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'verify-email-adress', component: VerifyEmailComponent },
-  // {path: 'navbar', component: NavbarComponent },
+  {path: 'test', component: TestComponent}
 ];
 
 @NgModule({

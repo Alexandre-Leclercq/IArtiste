@@ -10,7 +10,6 @@ import { ApiService } from '../shared/services/api.service';
 export class TestComponent {
 
   constructor(
-    public authService: AuthService,
     public apiService: ApiService
 ) { }
 
