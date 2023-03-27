@@ -21,9 +21,9 @@ export class GenerateImageComponent implements OnInit {
   ) { }
   ngOnInit() { };
 
-  updateImage(image64: string = ''): void {
-    if (image64) {// if the string isn't empty
-      this.image = 'data:image/png;base64, ' + image64;
+  updateImage(imageUrl: string = ''): void {
+    if (imageUrl) {// if the string isn't empty
+      this.image = imageUrl;
     } else {
       this.image = 'assets/img/test.png';
     }
@@ -33,10 +33,11 @@ export class GenerateImageComponent implements OnInit {
     this.apiService.generateImage(text).subscribe(response => {
       let image: GeneratedImage = {
         created: response.created,
-        b64_json: response.data[0].b64_json,
+        prompt: text,
+        url: response.data[0].url,
       };
       this.dataService.addImageGenerate(this.user, image)
-      this.updateImage(image.b64_json);
+      this.updateImage(image.url);
       this.ngOnInit();
     })
   }
