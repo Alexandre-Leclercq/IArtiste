@@ -1,8 +1,8 @@
-interface base64json {
-    base64_json: string
+interface b64_json {
+    b64_json: string
 }
 
 export interface GeneratedImage {
     created: any
-    data: [base64json];
+    data: [b64_json];
 }
