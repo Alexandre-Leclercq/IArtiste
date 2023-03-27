@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneratedImage } from 'src/app/shared/interface/generatedImage';
+import { User } from 'src/app/shared/interface/user.interface';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-generate-image',
@@ -9,9 +12,12 @@ import { ApiService } from 'src/app/shared/services/api.service';
 export class GenerateImageComponent implements OnInit {
 
   public image: string = 'assets/img/test.png';
+  
+  public user: User = JSON.parse(localStorage.getItem('user')!);
 
   constructor(
     public apiService: ApiService,
+    public dataService: DataService
   ) { }
   ngOnInit() { };
 
@@ -25,12 +31,12 @@ export class GenerateImageComponent implements OnInit {
 
   generateImage(text: string): void {
     this.apiService.generateImage(text).subscribe(response => {
-      let imgBase64: string = response.data[0].b64_json;
-      console.log(response);
-      console.log(response.data);
-      console.log(response.data[0]);
-      console.log(imgBase64);
-      this.updateImage(imgBase64);
+      let image: GeneratedImage = {
+        created: response.created,
+        b64_json: response.data[0].b64_json,
+      };
+      this.dataService.addImageGenerate(this.user, image)
+      this.updateImage(image.b64_json);
       this.ngOnInit();
     })
   }

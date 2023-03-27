@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GeneratedImage } from '../interface/generatedImage';
+import { GeneratedImage, ResponseGeneratedImage } from '../interface/generatedImage';
 import { Observable } from 'rxjs';
 
 
@@ -15,7 +15,7 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  generateImage(text: string): Observable<GeneratedImage>{
+  generateImage(text: string): Observable<ResponseGeneratedImage>{
     const body = {
       "prompt": text,
       "size": "512x512",
@@ -28,6 +28,6 @@ export class ApiService {
       })
     };
 
-    return this.http.post<GeneratedImage>(this.baseUrl+ 'generations', JSON.stringify(body), httpOptions);
+    return this.http.post<ResponseGeneratedImage>(this.baseUrl+ 'generations', JSON.stringify(body), httpOptions);
   }
 }

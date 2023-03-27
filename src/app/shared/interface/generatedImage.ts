@@ -4,5 +4,10 @@ interface b64_json {
 
 export interface GeneratedImage {
     created: any
+    b64_json: string;
+}
+
+export interface ResponseGeneratedImage {
+    created: any
     data: [b64_json];
 }
