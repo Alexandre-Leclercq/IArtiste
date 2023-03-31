@@ -5,7 +5,6 @@ import { LoginComponent } from './view/login/login.component';
 import { ForgotPasswordComponent } from './view/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './view/verify-email/verify-email.component';
 import { AuthGuard } from './shared/guard/auth.guard';
-import { NavbarComponent } from './navbar/navbar.component';
 import { GalleryComponent } from './view/gallery/gallery.component';
 import { GalleryclicComponent } from './view/galleryclic/galleryclic.component';
 import { TestComponent } from './test/test.component';

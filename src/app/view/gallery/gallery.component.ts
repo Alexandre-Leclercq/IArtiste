@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/shared/interface/user.interface';
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
@@ -8,9 +10,19 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class GalleryComponent implements OnInit {
 
+  public user: User = JSON.parse(localStorage.getItem('user')!);
+
   constructor(
-    public dataService: DataService
+    private dataService: DataService,
+    private route: ActivatedRoute
   ) { }
-  ngOnInit() { };
+  ngOnInit() { 
+    let type = this.route.snapshot.paramMap.get('type');
+    if (type === "all") {
+      console.log( this.dataService.getAllImageUser(this.user));
+    } else if(type === "me") {
+      this.dataService.getAllImageUser(this.user)
+    }
+  };
 
 }
