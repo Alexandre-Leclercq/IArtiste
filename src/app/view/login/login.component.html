@@ -2,28 +2,36 @@
     <div class="card shadow-sm">
         <div class="card-body">
             <h5 class="card-title">Connexion</h5>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="johndoe@example.com" #userEmail required>
+            <form>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="johndoe@example.com" #userEmail required>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="mdp" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="mdp" #userPassword required>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="mdp" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="mdp" #userPassword required>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-4">
-                    <button type="button" (click)="sign_in(userEmail.value, userPassword.value)" class="btn btn-primary">Se connecter</button>
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <button type="button" (click)="sign_in(userEmail.value, userPassword.value)" class="btn btn-primary">Se connecter</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <a routerLink="/forgot-password">Mot de passe oublié</a>
+                <div class="row mb-5">
+                    <div class="col">
+                        <a routerLink="/forgot-password">Mot de passe oublié</a>
+                    </div>
                 </div>
-            </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <h5>Vous n'avez pas de compte ?</h5>
+                        <a class="btn btn-primary" routerLink="/register">Créer un compte</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

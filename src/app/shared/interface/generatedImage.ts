@@ -1,14 +1,15 @@
-interface url {
-    url: string
+interface base64json {
+    b64_json: string
 }
 
 export interface GeneratedImage {
     created: any,
     prompt: string,
-    url: string
+    filename: string,
+    url?: string
 }
 
 export interface ResponseGeneratedImage {
     created: any
-    data: [url]
+    data: [base64json]
 }

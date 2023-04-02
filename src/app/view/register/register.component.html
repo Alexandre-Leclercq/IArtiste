@@ -2,43 +2,35 @@
     <div class="card shadow-sm">
         <div class="card-body">
             <h5 class="card-title">Inscription</h5>
-            <!-- <div class="row">
-                <div class="col-6">
-                    <label for="firstName" class="form-label">Prénom</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="John" #userFirstName required>
+            <form>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="johndoe@example.com" #userEmail required>
+                    </div>
                 </div>
-                <div class="col-6">
-                    <label for="lastName" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Doe" #userLastName required>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="mdp" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="mdp" #userPassword required>
+                    </div>
                 </div>
-            </div> -->
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="johndoe@example.com" #userEmail required>
+                <div class="row mb-3">
+                    <div class="col">
+                        <button type="button" (click)="sign_up(userEmail.value, userPassword.value)" class="btn btn-primary">S'inscrire</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="mdp" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="mdp" #userPassword required>
+                <div class="row mb-3">
+                    <div class="col">
+                        <button type="button" (click)="sign_up(userEmail.value, userPassword.value)" class="btn btn-primary">
+                            <span>
+                                <i class="fa-brands fa-google"></i>
+                                Continuer avec Google
+                            </span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <button type="button" (click)="sign_up(userEmail.value, userPassword.value)" class="btn btn-primary">S'inscrire</button>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <button type="button" (click)="sign_up(userEmail.value, userPassword.value)" class="btn btn-primary">
-                        <span>
-                            <i class="fa-brands fa-google"></i>
-                            Continuer avec Google
-                        </span>
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

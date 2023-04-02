@@ -6,6 +6,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './view/register/register.component';
 import { AuthService } from './shared/services/auth.service';
@@ -15,7 +16,6 @@ import { ForgotPasswordComponent } from './view/forgot-password/forgot-password.
 import { VerifyEmailComponent } from './view/verify-email/verify-email.component';
 import { GalleryComponent } from './view/gallery/gallery.component';
 import { GalleryclicComponent } from './view/galleryclic/galleryclic.component'; 
-import { TestComponent } from './test/test.component';
 import { GenerateImageComponent } from './view/generate-image/generate-image.component'; 
 import { NavbarComponent } from './navbar/navbar.component';
 import { ApiService } from './shared/services/api.service';
@@ -32,13 +32,13 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryComponent,
     GalleryclicComponent,
     GenerateImageComponent,
-    NavbarComponent,
-    TestComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,

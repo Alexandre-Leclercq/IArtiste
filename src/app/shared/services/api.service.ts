@@ -18,6 +18,7 @@ export class ApiService {
   generateImage(text: string): Observable<ResponseGeneratedImage>{
     const body = {
       "prompt": text,
+      "response_format": "b64_json",
       "size": "512x512"
     };
     const httpOptions = {

@@ -3,6 +3,7 @@ import { GeneratedImage } from 'src/app/shared/interface/generatedImage';
 import { User } from 'src/app/shared/interface/user.interface';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { DataService } from 'src/app/shared/services/data.service';
+import { UploadService } from 'src/app/shared/services/upload.service';
 
 @Component({
   selector: 'app-generate-image',
@@ -17,7 +18,8 @@ export class GenerateImageComponent implements OnInit {
 
   constructor(
     public apiService: ApiService,
-    public dataService: DataService
+    public dataService: DataService,
+    public uploadService: UploadService
   ) { }
   ngOnInit() { };
 
@@ -30,15 +32,29 @@ export class GenerateImageComponent implements OnInit {
   }
 
   generateImage(text: string): void {
+    let filename = '';
     this.apiService.generateImage(text).subscribe(response => {
-      let image: GeneratedImage = {
-        created: response.created,
-        prompt: text,
-        url: response.data[0].url,
-      };
-      this.dataService.addImageGenerate(this.user, image)
-      this.updateImage(image.url);
-      this.ngOnInit();
+      this.uploadService.uploadFile(response.data[0].b64_json)
+      .then(s => { // on success
+        filename = s.ref.name;
+      }).catch(error => { // on error
+        console.log(error);
+      }).finally(() => { // when process over
+        let image: GeneratedImage = {
+          created: response.created,
+          prompt: text,
+          filename: filename,
+        };
+        this.dataService.addImageGenerate(this.user, image)
+        let url = '';
+        this.uploadService.downloadFile(image.filename)
+        .then(s => { // success to get the url
+          url = s;
+        }).finally(() => { // update the image url
+          this.updateImage(url);
+          this.ngOnInit();
+        });
+      });
     })
   }
 }

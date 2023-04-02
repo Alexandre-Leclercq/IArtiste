@@ -7,7 +7,6 @@ import { VerifyEmailComponent } from './view/verify-email/verify-email.component
 import { AuthGuard } from './shared/guard/auth.guard';
 import { GalleryComponent } from './view/gallery/gallery.component';
 import { GalleryclicComponent } from './view/galleryclic/galleryclic.component';
-import { TestComponent } from './test/test.component';
 import { GenerateImageComponent } from './view/generate-image/generate-image.component';
 
 const routes: Routes = [
@@ -18,8 +17,7 @@ const routes: Routes = [
   {path: 'galleryclic', component: GalleryclicComponent},
   {path: 'generate-image', component: GenerateImageComponent, canActivate: [AuthGuard]},
   {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'verify-email-adress', component: VerifyEmailComponent },
-  {path: 'test', component: TestComponent}
+  {path: 'verify-email-address', component: VerifyEmailComponent }
 ];
 
 @NgModule({
