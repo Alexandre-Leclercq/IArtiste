@@ -25,9 +25,9 @@ export class GalleryComponent implements OnInit {
   ngOnInit() { 
     let type = this.route.snapshot.paramMap.get('type');
     if (type === "all") {
-      this.retrieveAllImagesCurrentUser();
+      console.log('ok')
     } else if(type === "me") {
-      console.log( this.dataService.getAllImageUser(this.user));
+      this.retrieveAllImagesCurrentUser();
     }
   };
 
@@ -53,7 +53,7 @@ export class GalleryComponent implements OnInit {
           url: ''
         }
         this.uploadService.downloadFile(image.filename)
-        .then(s => {
+        .then(s => { // on success
           tmp.url = s;
         })
         .finally(() => {
