@@ -20,6 +20,8 @@ import { GenerateImageComponent } from './view/generate-image/generate-image.com
 import { NavbarComponent } from './navbar/navbar.component';
 import { ApiService } from './shared/services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryComponent,
     GalleryclicComponent,
     GenerateImageComponent,
-    NavbarComponent
+    NavbarComponent,
+    SpinnerComponent,
+    WrapperComponent
   ],
   imports: [
     BrowserModule,

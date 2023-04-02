@@ -14,6 +14,8 @@ export class GenerateImageComponent implements OnInit {
 
   public image: string = 'assets/img/test.png';
   
+  public loading: boolean = false;
+
   public user: User = JSON.parse(localStorage.getItem('user')!);
 
   constructor(
@@ -32,6 +34,9 @@ export class GenerateImageComponent implements OnInit {
   }
 
   generateImage(text: string): void {
+    this.loading = true;
+    this.ngOnInit();
+
     let filename = '';
     this.apiService.generateImage(text).subscribe(response => {
       this.uploadService.uploadFile(response.data[0].b64_json)
@@ -52,6 +57,7 @@ export class GenerateImageComponent implements OnInit {
           url = s;
         }).finally(() => { // update the image url
           this.updateImage(url);
+          this.loading = false;
           this.ngOnInit();
         });
       });

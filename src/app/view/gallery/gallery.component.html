@@ -1,12 +1,12 @@
 <app-navbar/>
 <div class="p-5">
-  <h1>Gallerie</h1>
+  <h1>Galerie</h1>
 </div>
 <div class="container-fluid d-flex justify-content-center align-items-center">
   <div class=" row row-cols-4 justify-content-md-start">
     <div class="col" *ngFor="let image of images">
       <img src="{{image.url}}"
-        class="mt-5 mb-5 small shadow w-75 rounded mx-auto d-block" alt="{{image.prompt}}">
+        class="mt-5 mb-5 small shadow w-100 rounded mx-auto d-block" alt="{{image.prompt}}">
     </div>
   </div>
 </div>
