@@ -5,8 +5,13 @@
 <div class="container-fluid d-flex justify-content-center align-items-center">
   <div class=" row row-cols-4 justify-content-md-start">
     <div class="col" *ngFor="let image of images">
-      <img src="{{image.url}}"
-        class="mt-5 mb-5 small shadow w-100 rounded mx-auto d-block" alt="{{image.prompt}}">
+      <span>
+        <app-wrapper [loading]="image.url === ''">
+          <img src="{{image.url === '' ? 'assets/img/placeholder.png' : image.url}}"
+          class="mt-5 mb-5 small shadow w-100 rounded mx-auto d-block" alt="{{image.prompt}}"
+          (click)="consultImage(image)">
+        </app-wrapper>
+    </span>
     </div>
   </div>
 </div>

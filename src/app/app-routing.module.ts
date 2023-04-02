@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'gallery/:type', component: GalleryComponent, canActivate: [AuthGuard]},
-  {path: 'galleryclic', component: GalleryclicComponent},
+  {path: 'consult', component: GalleryclicComponent},
   {path: 'generate-image', component: GenerateImageComponent, canActivate: [AuthGuard]},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'verify-email-address', component: VerifyEmailComponent }

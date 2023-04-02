@@ -1,14 +1,15 @@
+<app-navbar/>
 <div class="container-fluid d-flex justify-content-center align-items-center">  
   <div class="mt-5 card mb-3" style="max-width: 960px;">
     <div class="row g-4">
       <div class="col-md-7">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Icon_Bird_512x512.png?20130511120544" class="img-fluid rounded-start" alt="...">
+        <img src="{{image.get('url')}}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-5">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Create 3 mins ago</small></p>
+          <p class="card-textfst-italic">"{{image.get('prompt')}}"</p>
+          <p class="card-text mb-5"><small class="text-muted">Créé le  {{stringToInt(image.get('created'))*1000 | date:'dd/MM/yyyy à HH:mm:ss'}}</small></p>
+          <a routerLink="/gallery/me" class="btn btn-primary mt-5 text-align-end">Retour à la galerie</a>
         </div>
       </div>
     </div>

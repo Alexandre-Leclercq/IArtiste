@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GeneratedImage } from 'src/app/shared/interface/generatedImage';
 import { User } from 'src/app/shared/interface/user.interface';
 import { DataService } from 'src/app/shared/services/data.service';
-import { map } from 'rxjs';
+import { map, zip } from 'rxjs';
 import { UploadService } from 'src/app/shared/services/upload.service';
 
 @Component({
@@ -20,7 +20,8 @@ export class GalleryComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    private router: Router
   ) { }
   ngOnInit() { 
     let type = this.route.snapshot.paramMap.get('type');
@@ -30,7 +31,6 @@ export class GalleryComponent implements OnInit {
       this.retrieveAllImagesCurrentUser();
     }
   };
-
 
   retrieveAllImagesCurrentUser(): void {
     this.dataService.getAllImageUser(this.user).get().pipe(
@@ -61,6 +61,14 @@ export class GalleryComponent implements OnInit {
         return tmp;
       });
     });
+  }
+
+  consultImage(image: GeneratedImage) {
+    this.router.navigate(['/consult', {
+      created: image.created,
+      prompt: image.prompt,
+      filename: image.filename,
+      url: image.url}]);
   }
 
 }
