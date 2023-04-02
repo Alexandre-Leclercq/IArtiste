@@ -11,7 +11,7 @@
                 <div class="col-8 text-center">
                     <span>
                         <app-wrapper [loading]="loading">
-                            <img [src]="image" alt="image"/>
+                            <img [src]="image" alt="image" *ngIf="image !== ''"/>
                         </app-wrapper>
                     </span>
                 </div>

@@ -12,7 +12,7 @@ import { UploadService } from 'src/app/shared/services/upload.service';
 })
 export class GenerateImageComponent implements OnInit {
 
-  public image: string = 'assets/img/test.png';
+  public image: string = '';
   
   public loading: boolean = false;
 

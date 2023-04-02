@@ -16,6 +16,6 @@ export class DataService {
   }
 
   getAllImageUser(user: User): AngularFirestoreCollection<GeneratedImage[]> {
-    return this.db.collection('users').doc(user.uid).collection('images');
+    return this.db.collection('users').doc(user.uid).collection('images', ref => ref.orderBy('created', 'desc'));
   }
 }
